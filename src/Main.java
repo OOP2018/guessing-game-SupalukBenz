@@ -15,4 +15,5 @@ public class Main {
 		System.out.println("play() returned "+solution+ ". It's a secret number.");
         System.out.println("Your guess is " + game.getCount());
     }
+
 }
