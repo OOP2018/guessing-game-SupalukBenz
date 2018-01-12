@@ -27,13 +27,14 @@ public class GameSolver {
                 break;
             }else {
                 number.add(autoNumber);
-                if(game.getMessage().startsWith("It's too small") || game.getMessage().startsWith("Too small")){
+                if(game.getMessage().contains("small")){
                     min = autoNumber;
                 }else {
                     max = autoNumber;
                 }
 
                 autoNumber = rand.nextInt( max-min ) + min;
+
                 System.out.println(game.getMessage());
 
             }
@@ -43,5 +44,6 @@ public class GameSolver {
 
         return autoNumber;
     }
+
 
 }
