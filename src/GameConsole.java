@@ -4,7 +4,6 @@ import java.util.Scanner;
  *  Play guessing game on the console.
  */
 public class GameConsole {
-
 	/**
 	 *  The play method is method for input guess number from user
 	 *	and run loop game with print message until user will win.

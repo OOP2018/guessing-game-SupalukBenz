@@ -5,7 +5,6 @@ import java.util.Random;
  * @author Supaluk Jaroensuk
  */
 public class GuessingGame extends NumberGame{
-
     private int secret;
     private int upperBound;
     private int count;

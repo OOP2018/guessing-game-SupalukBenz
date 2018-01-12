@@ -4,7 +4,6 @@ import java.util.Random;
  * @author Supaluk Jaroensuk
  */
 public class GameSolver {
-
     /**
      * Play automatically game and print message
      * @param game is NumberGame class
@@ -23,6 +22,7 @@ public class GameSolver {
                 System.out.println(game.getMessage());
                 break;
             }else {
+
                 System.out.println(game.getMessage());
                 autoNumber = rand.nextInt( game.getUpperBound() ) + 1;
             }

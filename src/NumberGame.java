@@ -9,8 +9,9 @@
 public class NumberGame {
 	/** A helpful message for user. */
 	private String message;
-	private int count;
+	/** Count how many guess the user input */
 
+	private int count;
     /** Initialize a new default game. */
     public NumberGame() {
 		// initialize your game.
@@ -64,7 +65,11 @@ public class NumberGame {
 		return "Guessing game!";
     }
 
-    public int getCount(){
+	/**
+	 * Get count number
+	 * @return Count number how many guessing game
+	 */
+	public int getCount(){
 	    return count;
     }
 
