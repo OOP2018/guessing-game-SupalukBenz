@@ -9,11 +9,13 @@
 public class NumberGame {
 	/** A helpful message for user. */
 	private String message;
+	private int count;
 
     /** Initialize a new default game. */
     public NumberGame() {
 		// initialize your game.
     	message = "";
+    	count = 0;
     }
    
     /**
@@ -61,4 +63,9 @@ public class NumberGame {
     public String toString() {
 		return "Guessing game!";
     }
+
+    public int getCount(){
+	    return count;
+    }
+
 }

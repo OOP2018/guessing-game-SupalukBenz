@@ -8,13 +8,14 @@ public class GuessingGame extends NumberGame{
 
     private int secret;
     private int upperBound;
-
+    private int count;
     /**
      * Initialize a game by set secret number
      * @param upperBound is maximum number in guessing game.
      */
     GuessingGame(int upperBound){
         this.upperBound = upperBound;
+        this.count = 0;
         long seed = System.nanoTime();
         Random rand = new Random(seed);
         this.secret = rand.nextInt(upperBound) + 1;
@@ -28,6 +29,7 @@ public class GuessingGame extends NumberGame{
      */
     @Override
     public boolean guess(int number) {
+        count++;
         if (number == secret) {
             setMessage("You win! Answer is " + secret);
             return true;
@@ -51,6 +53,10 @@ public class GuessingGame extends NumberGame{
 
     public String toString(){
         return "This is Guessing game. Let's guess secret number between 1 and " + getUpperBound();
+    }
+    @Override
+    public int getCount(){
+        return count;
     }
 
 }

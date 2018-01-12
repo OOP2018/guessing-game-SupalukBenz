@@ -16,7 +16,6 @@ public class GameSolver {
         int autoNumber = rand.nextInt( game.getUpperBound() ) + 1;
         System.out.println( game.toString() );
         System.out.println();
-
         while(true){
             System.out.println("Guess it. Your number is >> " + autoNumber);
 
@@ -27,6 +26,7 @@ public class GameSolver {
                 System.out.println(game.getMessage());
                 autoNumber = rand.nextInt( game.getUpperBound() ) + 1;
             }
+
             System.out.println();
         }
 
