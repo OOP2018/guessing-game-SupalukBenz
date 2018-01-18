@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Random;
 
 /**
  * Automatically play guessing game until find correct secret number
@@ -11,7 +11,7 @@ public class GameSolver {
      * @return correct number
      */
     public int play(NumberGame game){
-        List<Integer> number = new ArrayList<Integer>();
+
         long seed = System.nanoTime();
         Random rand = new Random(seed);
         int autoNumber = rand.nextInt( game.getUpperBound() ) + 1;
@@ -20,13 +20,10 @@ public class GameSolver {
         Integer min = 1;
         Integer max = game.getUpperBound();
         while(true){
-            System.out.println("Guess it. Your number is >> " + autoNumber);
-
             if(game.guess(autoNumber)){
-                System.out.println(game.getMessage());
                 break;
             }else {
-                number.add(autoNumber);
+
                 if(game.getMessage().contains("small")){
                     min = autoNumber;
                 }else {
@@ -34,12 +31,8 @@ public class GameSolver {
                 }
 
                 autoNumber = rand.nextInt( max-min ) + min;
-
-                System.out.println(game.getMessage());
-
             }
 
-            System.out.println();
         }
 
         return autoNumber;

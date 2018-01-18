@@ -1,10 +1,10 @@
 import java.util.Random;
 /**
- * GuessingGame class is class for set secret number
+ * SupalukGame class is class for set secret number
  * and set a message to show the user
  * @author Supaluk Jaroensuk
  */
-public class GuessingGame extends NumberGame{
+public class SupalukGame extends NumberGame{
     private int secret;
     private int upperBound;
     private int count;
@@ -12,7 +12,7 @@ public class GuessingGame extends NumberGame{
      * Initialize a game by set secret number
      * @param upperBound is maximum number in guessing game.
      */
-    GuessingGame(int upperBound){
+    public SupalukGame(int upperBound){
         this.upperBound = upperBound;
         this.count = 0;
         long seed = System.nanoTime();
@@ -53,7 +53,6 @@ public class GuessingGame extends NumberGame{
     public String toString(){
         return "This is Guessing game. Let's guess secret number between 1 and " + getUpperBound();
     }
-    @Override
     public int getCount(){
         return count;
     }
