@@ -17,8 +17,8 @@ public class GameSolver {
         int autoNumber = rand.nextInt( game.getUpperBound() ) + 1;
         System.out.println( game.toString() );
         System.out.println();
-        Integer min = 1;
-        Integer max = game.getUpperBound();
+        int min = 1;
+        int max = game.getUpperBound();
         while(true){
             if(game.guess(autoNumber)){
                 break;
