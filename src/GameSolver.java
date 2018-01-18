@@ -1,5 +1,3 @@
-import java.util.Random;
-
 /**
  * Automatically play guessing game until find correct secret number
  * @author Supaluk Jaroensuk
@@ -12,30 +10,29 @@ public class GameSolver {
      */
     public int play(NumberGame game){
 
-        long seed = System.nanoTime();
-        Random rand = new Random(seed);
-        int autoNumber = rand.nextInt( game.getUpperBound() ) + 1;
         System.out.println( game.toString() );
         System.out.println();
         int min = 1;
         int max = game.getUpperBound();
+        int guess = min + (max - min)/2;
         while(true){
-            if(game.guess(autoNumber)){
+            if(game.guess(guess)){
                 break;
             }else {
 
                 if(game.getMessage().contains("small")){
-                    min = autoNumber;
+                    min = guess;
                 }else {
-                    max = autoNumber;
+                    max = guess;
                 }
 
-                autoNumber = rand.nextInt( max-min ) + min;
+                guess = min + (max - min)/2;
+
             }
 
         }
 
-        return autoNumber;
+        return guess;
     }
 
 
