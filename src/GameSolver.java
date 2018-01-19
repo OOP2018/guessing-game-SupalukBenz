@@ -21,9 +21,9 @@ public class GameSolver {
             }else {
 
                 if(game.getMessage().contains("small")){
-                    min = guess;
+                    min = guess + 1;
                 }else {
-                    max = guess;
+                    max = guess - 1;
                 }
 
                 guess = min + (max - min)/2;
