@@ -89,11 +89,13 @@ public class GameController {
         this.game = new SupalukGame(upperNumber);
     }
 
+
     /**
      * Action on guess button for playing at window
      */
     public void handleGuess(){
-        if(guessNum.getLength() != 0){
+
+        if(guessNum.getLength() != 0 && guessNum.getText().matches("[\\d]+$")){
             String guessStr = guessNum.getText().trim();
             this.guessNumber = Integer.parseInt(guessStr);
 
@@ -117,6 +119,8 @@ public class GameController {
                 message.setText(game.getMessage());
             }
 
+            counter.countGuessAdd(1);
+            guess.guessUpdate(guessNumber);
 
         }else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -125,8 +129,7 @@ public class GameController {
 
             alert.showAndWait();
         }
-        counter.countGuessAdd(1);
-        guess.guessUpdate(guessNumber);
+
     }
 
     /**
